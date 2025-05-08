@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'Figtree';
+  src: url(/fonts/Figtree-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Figtree';
+  src: url(/fonts/Figtree-ExtraBold.woff2) format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+:root{
+  --color-black: #111111;
+  --color-gray: #6B6B6B;
+  --color-yellow: #F4D04E;
+  --color-white: #FFFFFF;
+  
+  --font-family-base: 'Figtree', sans-serif;
+  --font-size: 14px;
+
+  --container-width: 336px;
+  --content-height: 464px;
+}
+body{
+  background-color: var(--color-yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+p{
+  margin: 0px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size);
+  color: var(--color-black);
+}
+.card{
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  margin:auto ;
+  padding: 24px;
+  gap: 24px;
+  width: var(--container-width);
+  height: var(--content-height);
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-black);
+  box-shadow: 10px 10px 0px 0px rgba(17, 17, 17, 1);
+}
+.illustration{
+  border-radius: 10px;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: var(--container-width);
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+.image {
+  width: fit-content;
+  height: 200px;
+  margin: auto;
+  position: absolute;
+  overflow: visible;
+  align-self:stretch;
+}
+.content{
+  width: var(--container-width);
+  height: 194px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+}
+.category{
+  display: flex;
+  width: fit-content;
+  background-color: var(--color-yellow);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 800;
+  gap: 8px;
+}
+.title{
+  font-weight: 800;
+  font-size:24px;
+}
+.title:hover{
+  color: var(--color-yellow);
+  cursor: pointer;
+}
+.text{
+  line-height: 24px;
+  font-size: 16px;
+  color: var(--color-gray);
+}
+.author{
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  font-weight: 800;
+  gap: 12px;
+}
+.userpic{
+  width: 32px;
+  height: 32px;
+}
+@media (max-width:480px) { /* Мобильные устройства */
+  :root {
+      --container-width: 279px; /* Ширина карточки на мобильных устройствах */
+      --content-height: 443px;
+  }
+  p{
+    font-size: 12px;
+  }
+  .title{
+    font-size: 20px;
+  }
+  .text{
+    line-height: 20px;
+    font-size: 14px;
+  }
+}
